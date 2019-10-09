@@ -61,7 +61,7 @@ let webpackPlugins = [
     })
 ];
 
-if (isDeploy) webpackPlugins.push(new UglifyJSPlugin({ sourceMap : true }));
+if (isDeploy) webpackPlugins.push(new UglifyJSPlugin({ sourceMap: true }));
 
 function buildJS(filename) {
     return () => {
@@ -150,8 +150,8 @@ gulp.task('build:html', cb => {
 
         Promise.resolve(render()).then(html => {
             file('main.html', html, {
-                    'src': true
-                })
+                'src': true
+            })
                 .pipe(replace('<%= path %>', path))
                 .pipe(gulp.dest(buildDir))
                 .on('end', cb);
@@ -307,4 +307,17 @@ gulp.task('log', () => {
     }
 
     return Promise.all([log('live'), log('preview')]);
+});
+
+gulp.task('embeds', ['local'], () => {
+    gulp.watch(['src/**/*'], ['local']).on('change', evt => {
+        gutil.log(gutil.colors.yellow(`${evt.path} was ${evt.type}`));
+    });
+
+    browser.init({
+        'server': {
+            'baseDir': buildDir
+        },
+        'port': 8000
+    });
 });
