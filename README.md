@@ -1,4 +1,16 @@
-# Interactive atom template
+# OFM Awards Index atom
+
+For sponsorships badging, awards need to have different main tags. This atom switches the label on the main tag to 'Observer Food Monthly Awards 20XY' and the link to the curated front at /observer-food-monthly-awards. This is separated into a second atom, as it can be added to non-award pages, and also to de-couple the functionality from the index atom.
+
+## Updating for this year step-by-step
+
+1. Clone the repository to a new one
+2. Edit config.json to give it a new path
+3. In app.js edit lines 14 & 21 (web and app) to the current year
+4. Deploy, and add to all award pages (can be at the bottom)
+
+## Standard atom instructions:
+
 
 ```
 npm install
