@@ -9,6 +9,9 @@ For sponsorships badging, awards need to have different main tags. This atom swi
 3. In app.js edit lines 14 & 21 (web and app) to the current year
 4. Deploy, and add to all award pages (can be at the bottom)
 
+**Also see the [OFM Index atom](https://github.com/guardian/ofm-awards-index-2019-atom).**
+
+
 ## Standard atom instructions:
 
 
