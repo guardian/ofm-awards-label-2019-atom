@@ -2,6 +2,8 @@
 renderSeriesTag();
 
 function renderSeriesTag() {
+
+
   var pDoc = parent.document;
 
   // try web
@@ -26,10 +28,12 @@ function cleanupAtom() {
   let parentDoc = window.parent.document;
   let allAtoms = parentDoc.querySelectorAll('.element-atom');
   allAtoms.forEach(function (a) {
-    let iBody = a.querySelector('iframe').contentDocument.body;
-    let iBodyText = iBody.innerText;
-    if (iBodyText.indexOf('Label helper') >= 0) {
-      a.parentElement.removeChild(a);
+    if (a.querySelector('iframe')) {
+      let iBody = a.querySelector('iframe').contentDocument.body;
+      let iBodyText = iBody.innerText;
+      if (iBodyText.indexOf('Label helper') >= 0) {
+        a.parentElement.removeChild(a);
+      }
     }
   })
 }
