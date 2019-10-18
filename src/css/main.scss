@@ -3,11 +3,17 @@
 @import "palette";
 
 // Uncomment for embeds
-@import "embed";
+// @import "embed";
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
 
 .element-atom,
 .interactive-atom {
-    margin: 0 !important;
+  margin: 0 !important;
+}
+
+body,
+.interactive-wrapper {
+  background-color: transparent;
+  color: transparent;
 }
